@@ -784,6 +784,8 @@ namespace MWWorld
 
         mWeatherManager->update (duration);
 
+        if(!mFacedHandle.empty()) {
+
         // inform the GUI about focused object
         try
         {
@@ -810,6 +812,9 @@ namespace MWWorld
         {
             MWWorld::Ptr null;
             MWBase::Environment::get().getWindowManager()->setFocusObject(null);
+        }
+        } else {
+            MWBase::Environment::get().getWindowManager()->setFocusObject(MWWorld::Ptr());
         }
 
         if (!mRendering->occlusionQuerySupported())
