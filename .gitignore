@@ -13,3 +13,4 @@ cmake_install.cmake
 Makefile
 makefile
 data
+CMakeLists.txt.user
